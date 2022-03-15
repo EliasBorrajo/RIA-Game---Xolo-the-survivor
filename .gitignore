@@ -1,3 +1,5 @@
+# Source : https://clubmate.fi/example-gitignore-file
+
 .env
 .env-development
 .env-production
