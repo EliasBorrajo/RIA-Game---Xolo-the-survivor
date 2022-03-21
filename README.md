@@ -1,5 +1,5 @@
-ELIAS A CREE SA BANCHE :) 
+README pour le GIT : 
 
-Alors, on le commence ce projet ?
+Lien vers notre jeu déployé : (...)
 
-test
+Lien vers les informations sur notre jeu (... ajouter ici lien vers description... )
