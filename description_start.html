@@ -15,7 +15,7 @@
         <!-- Hamburger -->
         <ul>
             <li class="hamburger">
-                <img src="ressources/images/hamburger_icon.svg">
+                <img src="ressources/images/hamburger_icon.svg" alt="icone menu hamburger">
             </li>
             <li class="active">
                 <a href="description_start.html">Description</a>
@@ -32,6 +32,9 @@
             <li>
                 <a href="journal_de_bord_start.html">Journal de bord</a>
             </li>
+            <li>
+                <a href="jeu.html">Jeu</a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -41,14 +44,52 @@
     <section id="articles">
         <article>
             <header>
-                <h2>Description de votre projet</h2>
-                <p>Par Jean Dupont le 5/02/2019 à 09:00</p>
+                <h2>Description de notre projet</h2>
+                <p>Par Elias Borrajo le 21/03/2022 à 18:32</p>
             </header>
-            <p>Lorem ipsum dolor sit amet... <a href="http://www.hevs.ch/">http://www.hevs.ch/</a>,
-                 Ut non eros scelerisque, varius diam a, pulvinar arcu. Phasellus fermentum non arcu ornare ornare. Sed libero mi, rutrum et felis commodo, molestie tempor leo. Duis sit amet erat ut elit faucibus tincidunt sit amet non leo. Quisque dapibus ultricies cursus.</p>
-            <p> Aenean elit nisi, maximus sit amet vulputate non, molestie non odio. Quisque in dolor vel libero <strong>lobortis commodo</strong> ultricies sed nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut pretium ipsum in ipsum venenatis, id elementum quam ultrices. Nam nec enim sagittis, ultrices massa eu, fermentum sem.</p>
-            <p><strong>Nam sed justo tortor:</strong>Aliquam eros ex, porttitor vel aliquam in, imperdiet id felis. Aliquam sed est quis nibh vestibulum porta. Nam ipsum quam, dapibus quis felis quis, pharetra auctor sapien</p>
-                <p>Le code source de l'application est disponible sur le <a href="https://github.com/">github du projet</a>.</p>
+            <p>
+                Dans le cadre du cours 624-2 Rich Internet Applications (RIA) de la formation 
+                <a href="https://www.hevs.ch/fr/hautes-ecoles/haute-ecole-de-gestion/informatique-de-gestion/formation-bachelor-en-informatique-de-gestion-200049/">Bachelor of Science en informatique de gestion</a> 
+                de la <a href="https://www.hevs.ch/fr/intro">HES-SO Valais Wallis</a>.
+                <br/>
+                Nous devons réaliser un jeu en JavaScript integré à un site internet basée sur du HTML & CSS, sans Framework pour nous aider.
+                Les bases HTML nous ont été fournies, le CSS doit reproduire un aspect visuel démandé par le professeur, et pour le jeu JS nous n'avons aucunne contraintes, sauf celle de faire un jeu en 2D.
+                <br/>
+                Nous avons donc décidé de développer la base du jeu sur un shooter en vue du dessus, que je me suis permis de nommer <b>"Xolo the survivor"</b>.
+            </p>
+
+            <h3>Informations Générales</h3>
+            <ul>
+                <li>Nom du jeu : Xolo the survivor</li>
+                <li>Niveaux : Un seul niveau/map actuellement</li>
+                <li>But : Survivre le plus longtemps possible en tuant le plus de zombies.</li>
+            </ul>
+
+            <h3>Mécaniques du jeu</h3>
+                <li>Nombre de vies : Xolo a 3 PV, une touche lui enlève 1 vie</li>
+                <li>Temps : Un timer démarre en début de partie, il indique combien de temps vous avez survécu</li>
+                <li>Points : Tuer des zombies vous rapporte des points, plus vous en avez, plus vous pourrez fanfarroner à la place du midi de Sion</li>
+                <li>Zombies : les zombies fonçent sur Xolo pour essayer de le dévorer</li>
+
+            <h3>Histoire</h3>
+            <p>
+                Vous incarnez Xolo, c'est l'un des derniers survivants après que le virus MK ait plongé l'humanité dans l'apocalypse.
+                <br/>
+                Xolo passait une soirée paisible à se promener en ville de Sion, mais tout bascula lorsque un ivrogne mordit des gens à la place du midi, 
+                les gens commencèrent à beugler, s'éffondrer, puis se relever en mordant à leur tour leurs amis qui essayaient de les aider.
+                <br/>
+                Notre jeune héros n'est pas dupe, il a vu plein de films de science-fiction et de fantastique, 
+                il sait très bien ce qui est en train de se passer, l'apocalypse zombie est arrivé !
+                <br/>
+                Xolo étant un jeun chasseur dans ses heures perdues, courrut vers son appartement pour y récuperer son fusil de chasse, un MOSSBERG 500.
+                C'est maintenant que le fun commence, vous incarnez Xolo, c'est l'un des derniers survivants après que le virus MK ait plongé l'humanité dans l'apocalypse.
+                <br/>
+                <br/>
+                <b>Survivez autant longtemps que possible, faites un max de points !</b>   
+            </p>
+            
+            
+            <p>Le code source de l'application est disponible sur le <a href="https://github.com/">gitlab du projet</a>.</p>
         </article>
     </section>
     <aside>
@@ -56,13 +97,13 @@
             <h3>Fiche signalétique</h3>
             <ul>
                 <li>
-                    <p><strong>Nom Prénom</strong>: Rôle</p>
+                    <p><strong>Bourquin Jonathan</strong>: Coder, Architect</p>
                 </li>
                 <li>
-                    <p><strong>Nom Prénom</strong>: Rôle</p>
+                    <p><strong>Lonfat Milena</strong>: Layout, Graphics</p>
                 </li>
                 <li>
-                    <p><strong>Nom Prénom</strong>: Rôle</p>
+                    <p><strong>Borrajo Elias</strong>: Git, Coder, Game-designer</p>
                 </li>
             </ul>
         </div>
