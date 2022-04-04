@@ -154,16 +154,14 @@ td {
   text-align: center;
 }
 
-.mockup, .flux{
+figure {
+  padding: 20px;
   text-align: center;
 }
 
-.mockup figure, .flux figure {
-  padding: 20px;
-}
-
-.mockup img, .flux img{
+figure img{
   width: 80%;
+  text-align: center;
 }
 
 /* Footer */
