@@ -154,15 +154,15 @@ td {
   text-align: center;
 }
 
-.mockup {
+.mockup, .flux{
   text-align: center;
 }
 
-.mockup figure {
+.mockup figure, .flux figure {
   padding: 20px;
 }
 
-.mockup img{
+.mockup img, .flux img{
   width: 80%;
 }
 
