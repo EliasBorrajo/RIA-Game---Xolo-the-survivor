@@ -154,6 +154,18 @@ td {
   text-align: center;
 }
 
+.mockup {
+  text-align: center;
+}
+
+.mockup figure {
+  padding: 20px;
+}
+
+.mockup img{
+  width: 80%;
+}
+
 /* Footer */
 footer {
   background-color: #484444;
