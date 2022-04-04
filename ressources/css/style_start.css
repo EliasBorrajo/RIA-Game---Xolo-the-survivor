@@ -154,16 +154,14 @@ td {
   text-align: center;
 }
 
-.mockup {
+figure {
+  padding: 20px;
   text-align: center;
 }
 
-.mockup figure {
-  padding: 20px;
-}
-
-.mockup img{
+figure img{
   width: 80%;
+  text-align: center;
 }
 
 /* Footer */
