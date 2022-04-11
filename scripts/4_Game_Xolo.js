@@ -1,5 +1,5 @@
 
-const customer = new Customer();
+const customer = new Customer(); //TEST AJOUTER FICHIERS
 console.log(customer.getName());
 
 // 1) configurer le CANVAS
@@ -15,33 +15,6 @@ console.log(canvas);
 // Ce sera notre objet canvas qui détient toute ses paramètres, objet sur lequelle on va pouvoir dessiner.
 const ctx = canvas.getContext('2d');
 console.log(ctx);
-
-function initialize() 
-{
-    // Register an event listener to call the resizeCanvas() function 
-    // each time the window is resized.
-    window.addEventListener('resize', resizeCanvas, false);
-    // Draw canvas border for the first time.
-    resizeCanvas();
-}
-
-// Runs each time the DOM window resize event fires.
-// Resets the canvas dimensions to match window,
-// then draws the new borders accordingly.
-function resizeCanvas() 
-{
-  htmlCanvas.width = window.innerWidth;
-  htmlCanvas.height = window.innerHeight;
-  redraw();
-}
-
-// Display custom canvas. In this case it's a blue, 5 pixel 
-// border that resizes along with the browser window.
-function redraw() {
-  context.strokeStyle = 'blue';
-  context.lineWidth = '5';
-  context.strokeRect(0, 0, window.innerWidth, window.innerHeight);
-}
 
 
 // 2) Definir le PLAYER
@@ -255,6 +228,20 @@ const projectiles = [];
 const enemies = [];
 const particles = [];
 const score = new Score(20, 30, 15, 0);
+
+// On re-initialise tous nos objets à chaque nouvelle partie (reset)
+function init()
+{
+    xPlayerSpawn = canvas.width  / 2;
+    yPlayerSpawn = canvas.height / 2;
+    player = new Player(xPlayerSpawn, yPlayerSpawn, 30, 'white');
+
+    projectiles = [];
+    enemies = [];
+    particles = [];
+    score = new Score(20, 30, 15, 0); 
+}
+
 
 // Définition des différentes fonctions
 // 8) Spawner ennemis
