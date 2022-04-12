@@ -1,0 +1,9 @@
+/*CSS pour supprimer les marges de 1-2 px au TOP & LEFT */
+body {
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    
+                
+}
+

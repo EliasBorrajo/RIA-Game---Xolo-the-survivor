@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Xolo le survivant</title>
-        <!-- CSS pour supprimer les marges de 1-2 px au TOP & LEFT -->
-        <style>
-            body {
-                margin: 0;
-                overflow: hidden;
-                
-            }
-
-        </style>
+        <meta name="description" content="Jeu de Xolo le survivant">
+        <meta name="author" content="Elias Borrajo">
+        <meta name="Group" content="Elias Borrajo, Jonathan Bourquin, Milena Lonfat">
+        <meta name="keywords" content="Xolo, survivant, jeu, Zombie, HTML5, CSS3">
+        
+        <link rel="stylesheet" href="ressources/css/style_game.css">    
     </head>
     <body>
-        <!--
-        <div class="fixed">
-            <div class="bg-white">
-                <h1>0</h1>
-                <p>Points</p>
-                <div>
-                    <button>Start Game</button>
-                </div>
-                
-            </div>
-        </div>-->
-
         <canvas>
-            
+            <p>ERREUR : Votre navigateur ne supporte pas l canvas de HTML5, essayez avec un autre navigateur.</p>
         </canvas>
         
 
         <!-- Scripte vien ici après canvas, car il utilisera ses propriétés -->
+        <!--
         <script src="scripts/Customer.js"></script>
         <script src="scripts/4_Game_Xolo.js"></script>
+        -->
+        <script src="scripts/1_GameLoop.js"></script>
+
     </body>
 </html>

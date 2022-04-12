@@ -202,7 +202,7 @@ class Score
 
     draw()
     {
-        ctx.font = this.size +"% Arial";
+        ctx.font = this.size + "px Arial";
         ctx.fillStyle = 'white';
         ctx.fillText(`Score : ${this.score}`, this.xPos, this.yPos);
     }
@@ -227,7 +227,7 @@ const player = new Player(xPlayerSpawn, yPlayerSpawn, 30, 'white');
 const projectiles = [];
 const enemies = [];
 const particles = [];
-const score = new Score(20, 30, 100, 0);
+const score = new Score(20, 30, 15, 0);
 
 // On re-initialise tous nos objets à chaque nouvelle partie (reset)
 function init()
