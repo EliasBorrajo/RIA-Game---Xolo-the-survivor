@@ -32,22 +32,18 @@ function gameLoop()
 {
     console.log('GameLoop');
 
-    // U P D A T E 
     // Update the game objects 
     for (let i = 0; i < gameObjects.length; i++)
     {
         gameObjects[i].update();
     }
 
-    // C O L L S I O N S
     // Detect collisions
     detectCollisions();
 
-    // C L E A R
     // Clear canvas
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    // D R A W
     // Draw the game objects
     for (let i = 0; i < gameObjects.length; i++)
     {
@@ -60,7 +56,6 @@ function gameLoop()
     context.imageSmoothingQuality = "high";
     context.drawImage(img, 100, 100, img.width /2, img.height /2);
     
-    // A N I M A T I O N  L O O P
     // keep the game loop going - call gameLoop again
     window.requestAnimationFrame( gameLoop );
 }

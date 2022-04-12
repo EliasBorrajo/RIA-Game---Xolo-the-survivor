@@ -2,8 +2,44 @@
 body {
     margin: 0;
     overflow: hidden;
-    width: 100%;
-    
-                
+    width: 100%;         
 }
 
+#canvas, #start, #game-over{
+    display: none;
+}
+
+/*Ecrans de menu*/
+#start, #game-over {
+    font-family:Arial, Helvetica, sans-serif;
+    color: #c72121;
+    padding: 20px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    height:200px;
+    width:250px;
+    text-align: center;
+}
+
+/*Bouttons*/
+#start a, #game-over a {
+    border: 3px solid #43bc25;
+    color: #82337f;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: block;
+    width: 200px;
+    text-align: center;
+    font-size:2em;
+    display: inline-block;
+}
+
+#start a:hover, #game-over a:hover {
+    background-color: #3733a6;
+    color: #bcb619;
+}

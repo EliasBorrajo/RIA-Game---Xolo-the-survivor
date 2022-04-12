@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang>
     <head>
-        <meta charset="UTF-8">
         <title>Xolo le survivant</title>
+        <meta charset="UTF-8">
         <meta name="description" content="Jeu de Xolo le survivant">
         <meta name="author" content="Elias Borrajo">
         <meta name="Group" content="Elias Borrajo, Jonathan Bourquin, Milena Lonfat">
         <meta name="keywords" content="Xolo, survivant, jeu, Zombie, HTML5, CSS3">
         
-        <link rel="stylesheet" href="ressources/css/style_game.css">    
+        <!-- SCRIPTS -->
+        <script src="scripts/MENUS.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="ressources/css/style_game.css">   
+
     </head>
     <body>
-        <canvas>
+        <!--<img id="myImage" src="ressources/images/Tutorial/potion_image.png">-->
+
+        <canvas id="canvas">
             <p>ERREUR : Votre navigateur ne supporte pas l canvas de HTML5, essayez avec un autre navigateur.</p>
+            <p>Essayez avec un moteur de recherche tel que : Google Chrome pour jouer au jeu.</p>
         </canvas>
         
+        <div id="start" style="display: block;">
+            <a href="#" onclick="startGame()">Start Game</a>
+            <a href="#" onclick="controls()">Controls</a>
+        </div>
 
+        <div id="game-over">
+            <h1>Game Over</h1>
+            <a href="#" onclick="startGame()">Restart Game</a>
+        </div>
+        
         <!-- Scripte vien ici après canvas, car il utilisera ses propriétés -->
         <!--
         <script src="scripts/Customer.js"></script>
         <script src="scripts/4_Game_Xolo.js"></script>
         -->
-        <script src="scripts/1_GameLoop.js"></script>
+        <!--<script src="scripts/1_GameLoop.js"></script>-->
 
     </body>
 </html>
