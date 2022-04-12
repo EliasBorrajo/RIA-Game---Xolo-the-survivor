@@ -1,13 +1,12 @@
-// 4) Définir ENEMY
-class Enemy extends BoardObject
+// 3) Définir PROJECTILE
+class Projectile 
 {
-    constructor(x, y, radius, color, velocity)
+
+    constructor(x, y, radius, color, velocity, speed)
     {
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
-        this.color = color;
-        this.velocity = velocity;
+        super(x, y, radius, color, velocity);
+        
+        this.speed = speed;
     }
 
     // Ce que à quoi la classe ressemble
@@ -31,7 +30,7 @@ class Enemy extends BoardObject
     {
         this.draw();
         // Calcul de la nouvelle position = direction & vitesse du projectile
-        this.x = this.x + this.velocity.x ;
-        this.y = this.y + this.velocity.y ;
+        this.x = this.x + this.velocity.x * this.speed;
+        this.y = this.y + this.velocity.y * this.speed;
     }
 }

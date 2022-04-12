@@ -1,7 +1,3 @@
-
-const customer = new Customer(); //TEST AJOUTER FICHIERS
-console.log(customer.getName());
-
 // 1) configurer le CANVAS
 // On récupère les, élements de la balise "canvas", que on attribue dans une variable constante (FINAL)
 const canvas = document.querySelector('canvas');
@@ -189,7 +185,7 @@ class Particle
     }
 }
 
-// Classe du score du joueur à afficher dans le canvas (Score)
+// Définir score du joueur à afficher dans le canvas (Score)
 class Score
 {
     constructor(xPos, yPos, size, score)
@@ -213,8 +209,6 @@ class Score
     }
 
 }
-
-
 
 
 // 6) Créer & centrer PLAYER au milieu de l'écran
