@@ -7,9 +7,10 @@ let context;
 let animationFrame;
 
 // UI
-let start_Screen      = document.getElementById("start");        // Div : Home Screen
-let gameCanvas_Screen = document.getElementById("canvas");  // Canvas : Game
-let gameOver_Screen   = document.getElementById("gameOver");  // Div : GameOver Screen
+let ui                = document.getElementById('ui');
+let start_Screen      = document.getElementById("start");       // Div : Home Screen
+let gameCanvas_Screen = document.getElementById("canvas");      // Canvas : Game
+let gameOver_Screen   = document.getElementById("gameOver");    // Div : GameOver Screen
 
 // Game
 let player;
@@ -27,9 +28,12 @@ let ennemiesSpawnTimeInterval;
 function homeScreen()
 {
     console.log('Display : Home Screen');
+    ui.style.display                = "block";
+
     start_Screen.style.display      = "block";
     gameCanvas_Screen.style.display = "none";
     gameOver_Screen.style.display   = "none";  
+    
 }
 
 function startGame()
@@ -39,6 +43,7 @@ function startGame()
     start_Screen.style.display      = "none";
     gameCanvas_Screen.style.display = "block";
     gameOver_Screen.style.display   = "none"
+    ui.style.display                = "none";
 
     // Start the game loop
     // Lancer la gameloop la première fois, qui se lancera à l'infini
@@ -55,6 +60,7 @@ function gameOver()
 
     reset();
 
+    ui.style.display                = "block";
     start_Screen.style.display      = "none";
     gameCanvas_Screen.style.display = "none";
     gameOver_Screen.style.display   = "block"

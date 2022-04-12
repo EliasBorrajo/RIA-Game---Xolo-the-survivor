@@ -5,12 +5,19 @@ body {
     width: 100%;         
 }
 
-#canvas, #start, #game-over{
+#canvas, #start, #gameOver{
     display: none;
 }
 
+#ui {
+    background-color: #3733a6;
+    display: block;
+    position: absolute;
+    
+}
+
 /*Ecrans de menu*/
-#start, #game-over {
+#start, #gameOver {
     font-family:Arial, Helvetica, sans-serif;
     color: #c72121;
     padding: 20px;
@@ -25,7 +32,7 @@ body {
 }
 
 /*Bouttons*/
-#start a, #game-over a {
+#start a, #gameOver a {
     border: 3px solid #43bc25;
     color: #82337f;
     text-decoration: none;
@@ -39,7 +46,7 @@ body {
     display: inline-block;
 }
 
-#start a:hover, #game-over a:hover {
+#start a:hover, #gameOver a:hover {
     background-color: #3733a6;
     color: #bcb619;
 }

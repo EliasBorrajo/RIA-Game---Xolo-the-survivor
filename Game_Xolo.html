@@ -26,15 +26,18 @@
             <p>Essayez avec un moteur de recherche tel que : Google Chrome pour jouer au jeu.</p>
         </canvas>
         
-        <div id="start" style="display: block;">
-            <a href="#" onclick="startGame()">Start Game</a>
-            <a href="#" onclick="controls()">Controls</a>
+        <div id="ui">
+            <div id="start" style="display: block;">
+                <a href="#" onclick="startGame()">Start Game</a>
+                <a href="#" onclick="controls()">Controls</a>
+            </div>
+    
+            <div id="gameOver">
+                <h1>Game Over</h1>
+                <a href="#" onclick="startGame()">Restart Game</a>
+            </div>
         </div>
-
-        <div id="gameOver">
-            <h1>Game Over</h1>
-            <a href="#" onclick="startGame()">Restart Game</a>
-        </div>
+        
         
         <!-- Scripte vien ici après canvas, car il utilisera ses propriétés -->
         <!--<script src="scripts/BoardObject.js"></script>
