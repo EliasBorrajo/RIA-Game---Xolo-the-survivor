@@ -217,7 +217,7 @@ function updateAndDraw()
     
                                         // create explosion particles 
                                         // On crée des particules quand on touche un ennemi
-                                        for(let i = 0; i < Math.random() * 100; i++)
+                                        for(let i = 0; i < Math.random() * 700; i++)
                                         {
                                             particles.push( new Particle( projectile.x, 
                                                                             projectile.y, 
