@@ -18,6 +18,8 @@ let projectiles = [];
 let enemies = [];
 let particles = [];
 let score;
+let scores = [];
+let maxScore;
 
 let ennemiesInterval;
 let ennemiesSpawnTimeInterval;
@@ -56,7 +58,17 @@ function startGame()
 
 function gameOver()
 {
-    console.log('Display : Game Over');
+    if (window.localStorage.getItem("scores") !== null)
+    {
+        scores = JSON.parse(localStorage.getItem("scores") || "[]");
+    } 
+
+    scores.push(score);
+    
+    document.getElementById("score").innerHTML = (Math.max(...scores.map(o => o.score))).toString();
+    
+    window.localStorage.setItem("scores", JSON.stringify(scores));
+    console.log("Display : Game Over");
 
     reset();
 
@@ -507,6 +519,10 @@ class Score
         this.score += 10;
     }
 
+    toString()
+    {
+     return this.score;
+    }
 }
 
 
