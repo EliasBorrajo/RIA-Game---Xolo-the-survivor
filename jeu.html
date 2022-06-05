@@ -5,6 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="ressources/css/style_start.css">
+    <script>
+        function allowDrop(ev) {
+          ev.preventDefault();
+        }
+        
+        function drag(ev) {
+          ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+          window.location.href="Game_Xolo.html";
+        }
+    </script>
 </head>
 <body>
 
@@ -47,11 +63,16 @@
                 <h2>Jeu</h2>
                 <p>Par Milena Lonfat le 04/04/2022 à 16:33</p>
             </header>
+            <p style="text-align: center;"> Envoie notre héros en mission !</p>
+            <div id="dragNdrop">
+                <img id="dragHero" src="ressources\images\Game_Assets\Hero\Hero-Guy-PNG\_Mode-Gun\01-Idle\JK_P_Gun__Idle_000.png" alt="heros" draggable="true" ondragstart="drag(event)">
+                <div id="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
         </article>
-    </section>    
+    </section>   
     <!-- >Fin zone pour votre contenu -->
 </main>
-    
+
     <footer>
         <img id="logo" src="ressources/images/logo.png">
     </footer>
