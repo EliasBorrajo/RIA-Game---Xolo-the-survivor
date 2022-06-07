@@ -36,6 +36,29 @@ function homeScreen()
     
 }
 
+function controls()
+{
+    console.log('Display : Controls text on Home Screen');
+
+    // Afficher un texte dans une fenêtre pop-up pour expliquer comment jouer au jeu 
+
+    // On affiche le texte dans une fenêtre pop-up
+    // Récuperer le texte de la DIV "controlsText" et l'afficher dans une fenêtre pop-up
+    let controlsText = document.getElementById("controlsText");
+    let controlsTextContent = controlsText.innerHTML;
+
+    window.alert(controlsTextContent);
+
+
+
+
+    let controls = document.getElementById('controlsText').toString();
+  
+    
+
+    
+}
+
 function startGame()
 {
     console.log('Display : Start Game');
