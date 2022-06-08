@@ -13,6 +13,8 @@
         <script src="scripts/2_Welcome.js"></script>
         <script src="scripts/3_Instruction.js"></script>
         <script src="scripts/4_GameOver.js"></script>-->
+        
+        <script src="scripts/geolocalisation.js"></script>
 
         <!-- CSS -->
         <link rel="stylesheet" href="ressources/css/style_game.css">   
@@ -27,11 +29,16 @@
         </canvas>
         
         <div id="ui">
+
+            <div id="geolocation">
+                <p>Ville:</p>
+                <p id="ville">contrée lointaine</p>
+            </div>
+
             <div id="start" style="display: block;">
                 <a href="#" onclick="startGame()">Start Game</a>
                 <a href="#" onclick="controls()">Controls</a>
             </div>
-    
             <div id="gameOver">
                 <h1>Game Over</h1>
                 <a href="#" onclick="startGame()">Restart Game</a>

@@ -34,16 +34,121 @@ h1 {
   padding-bottom: 2%;
 }
 
+/* Responsive design */
+
+/* Téléphone */
+@media screen and (max-width: 767px) {
+  body {
+    font-size: small;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .hamburger {
+    text-align: center;
+    padding-top: 6px;
+  }
+
+  .hamburger img {
+    filter: invert(100%);
+  }
+
+  nav li:not(.hamburger) {
+    display: none;
+  }
+
+  nav:hover li:not(.hamburger) {
+    display: block;
+  }
+
+  nav li a {
+    font-size: 1em;
+  }
+
+  main {
+    flex-wrap: wrap; 
+    align-items: flex-start;
+  }
+
+  article div ul li {
+    font-size: 1em;
+  }
+
+  main header h2 {
+    font-size: 1.2em;
+  }
+
+  main header p {
+    font-size: 0.8em;
+  }
+
+  th, td {
+    font-size: x-small;
+  }
+
+  .date, .temps {
+    width: 50px;
+  }
+}
+
+/* Tablette */
+@media screen and (min-width: 768px) {
+  body, th, td {
+    font-size: small;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  nav ul {
+    padding-left: 15px;
+  }
+
+  nav li {
+    float: left;
+  }
+
+  main {
+    flex-wrap: wrap; 
+    align-items: flex-start;
+  }
+
+  article div ul li {
+    font-size: small;
+  }
+
+  .date, .temps {
+    width: 55px;
+  }
+}
+
+/* Ecran plus grand */
+@media screen and (min-width: 1024px) {
+  body, th, td {
+    font-size: medium;
+  }
+
+  main {
+    flex-wrap: nowrap;
+  }
+
+  .date, .temps {
+    width: 75px;
+  }
+}
+
 /* nav */
 nav ul {
   background-color: #484444;
   list-style-type: none;
   overflow: hidden;
-  padding-left: 15px;
-}
-
-nav li {
-  float: left;
 }
 
 nav li a {
@@ -58,10 +163,6 @@ nav li a {
 nav li a:hover, li.active a {
   background-color: white;
   color: rgba(223, 76, 31, 1);
-}
-
-.hamburger {
-  display: none;
 }
   
 /* main */
@@ -138,6 +239,7 @@ aside ul {
   padding: 0px 10px 6px 20px;
 }
 
+/* Tableau */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -156,14 +258,32 @@ td {
   text-align: center;
 }
 
+#dragNdrop {
+  display: flex;
+}
+
+#dropZone {
+  background-color: gray;
+  width: 100px;
+  height: 100px;
+}
+
+/* Image */
 figure {
   padding: 20px;
   text-align: center;
 }
 
-figure img{
+figure img {
   width: 80%;
   text-align: center;
+}
+
+#dragHero {
+  margin-left: auto;
+  margin-right: auto;
+  width : 60px;
+  height : 50px;
 }
 
 /* Footer */
