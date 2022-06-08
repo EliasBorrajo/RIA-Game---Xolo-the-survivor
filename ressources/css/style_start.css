@@ -272,11 +272,17 @@ figure img {
   text-align: center;
 }
 
+#dropZone {
+  transform: scale(0.3, 0.3) rotateY(180deg);  
+}
+
+#dragZombie {
+  transform: scale(0.3, 0.3);
+}
+
 .imgJeu {
   margin-left: auto;
   margin-right: auto;
-  width : 60px;
-  height : 50px;
 }
 
 /* Footer */
