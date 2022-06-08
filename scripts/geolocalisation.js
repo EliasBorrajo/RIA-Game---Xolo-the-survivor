@@ -1,4 +1,4 @@
-function showCoordinate () {
+function showCoordinate (position) {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
 
