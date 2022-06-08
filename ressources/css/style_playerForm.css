@@ -3,33 +3,27 @@
 }
 
 body {
+	background-image: url('../images/Menus/dying-light.jpg');
+	background-repeat: no-repeat;   /*Avoir que 1 fois l'image*/
+    background-attachment: fixed;   /*Si l'image suit l'écran quand on scroll ou pas*/
+    background-position: center;    /*centrer l'image à l'écran*/
+    background-size: cover;         /*permet d'avoir toute l'image à chaque fois*/
+	
 	font-family:Arial, Helvetica, sans-serif;
-	display: flex;
+	display: block;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
 	margin: 0;
 }
 
-.container {
-	background-color: #fff;
-	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-	overflow: hidden;
-	width: 400px;
-	max-width: 100%;
-}
-
-.header {
+.header h2 {
 	border-bottom: 1px solid #f0f0f0;
-	background-color: #f7f7f7;
+	background-color: #0000009d;
 	padding: 20px 40px;
     text-align: center;
-}
-
-.header h2 {
 	margin: 0;
-    color: #82337f;
+    color: #d2de20;
     font-size: 2em;
 }
 
@@ -47,7 +41,7 @@ body {
 	display: inline-block;
 	margin-bottom: 5px;
     font-size: 2em;
-    color: #82337f;
+    color: #d2de20;
 }
 
 .form-control input {
@@ -65,33 +59,40 @@ body {
 	border-color: #777;
 }
 
-.form button {
+.container {
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 400px;
+	max-width: 100%;
+	background-color: #0000009d;
+	display: inline-block;
+    position: absolute;
+    /*Centrer la div sur l'écran*/
+    top: calc(50% - (316px/2));
+    left:  calc(50% - (400px/2));
+}
+
+#inputButton{
 	font-family:Arial, Helvetica, sans-serif;
-    color: #c72121;
-    border: 3px solid #43bc25;
-	border-radius: 15px;
-	color: #82337f;
+    position: relative;
+    height:50px;
+	left: calc(50% - (213px/2));;
+	border: 3px solid #0000005f;
+    color: #d2de20;
+    background-color: #0000009d;
     text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
     cursor: pointer;
-	display: block;
-	font-family: inherit;
-	font-size: 2em;
-	padding: 10px;
-	margin-top: 20px;
-	width: 100%;
-}
-.form button:hover{
-    background-color: #3733a6;
-    color: #bcb619;
+    width: 200px;
+    text-align: center;
+    font-size:2em;
+    display: inline-block;
 }
 
-@media screen and (max-width: 480px) {
-
-	.social-panel-container.visible {
-		transform: translateX(0px);
-	}
-	
-	.floating-btn {
-		right: 10px;
-	}
+#inputButton:hover{
+	background-color: #3733a6;
+    color: #d2de20;
 }
