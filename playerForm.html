@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+</html lang>
+    <head>
+        <title>Xolo le survivant - game form</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="ressources/css/style_playerForm.css">
+        <script>
+            function setUserName(){
+            var userName = document.getElementById('userInput').value;
+            window.localStorage.setItem("userName", JSON.stringify(userName));      
+            location.assign("Game_Xolo.html");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h2>Information joueur</h2>
+            </div>
+            <form class="form">
+                <div class="form-control">
+                    <label id="pseudo">Pseudo</label>
+                    <input id="userInput" type="text" placeholder="ex: Bibi3000"/> 
+                </div>
+            </form>
+            <button id="inputButton" onclick="setUserName()">C'est parti !</button>
+        </div>
+    </body>
+</html>
