@@ -1,4 +1,4 @@
-function showCoordinate (position) {
+function showCoordinate () {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
 
@@ -8,14 +8,15 @@ function showCoordinate (position) {
     request.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.44939cdcc6812e1e2543a968f09d0b72&lat=" +
     lat + "&lon=" + long + "&format=json", true);
     request.send();
-    request.onreadystatechange = processRequest;
+    request.onreadystatechange = FindCity;
 
-    function processRequest(e) {
+    var FindCity = function processRequest(e) {
         if (request.readyState == 4 && request.status == 200) {
         var response = JSON.parse(request.responseText);
         var city = response.address.town;
         window.localStorage.setItem("ville", JSON.stringify(city));
         console.log(`ville: ${city}`);
+        return city;
         }
     }   
 }
