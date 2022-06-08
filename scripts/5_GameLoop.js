@@ -12,6 +12,10 @@ let start_Screen      = document.getElementById("start");       // Div : Home Sc
 let gameCanvas_Screen = document.getElementById("canvas");      // Canvas : Game
 let gameOver_Screen   = document.getElementById("gameOver");    // Div : GameOver Screen
 
+// SONG 
+let audio_background = document.getElementById('audio_BackGround');
+
+
 // Game
 let player;
 let projectiles = [];
@@ -44,19 +48,10 @@ function controls()
 
     // On affiche le texte dans une fenêtre pop-up
     // Récuperer le texte de la DIV "controlsText" et l'afficher dans une fenêtre pop-up
-    let controlsText = document.getElementById("controlsText");
-    let controlsTextContent = controlsText.innerHTML;
 
-    window.alert(controlsTextContent);
-
-
-
-
-    let controls = document.getElementById('controlsText').toString();
-  
-    
-
-    
+    let controls = document.getElementById('controlsText').innerHTML;
+    let controlsTextContent = controls.innerHTML;
+    window.alert(controls);
 }
 
 function startGame()
@@ -72,6 +67,8 @@ function startGame()
     // Lancer la gameloop la première fois, qui se lancera à l'infini
     window.requestAnimationFrame( gameLoop ); 
 
+    audio_background.play();
+
     // 12) Callback methode ---> Apellé à chaque X temps defini dans la fontion (ici 1[s])
     spawnEnemies();
     
@@ -81,6 +78,14 @@ function gameOver()
 {
     console.log('Display : Game Over');
 
+    // Arreter la musique de fond et la réinitialiser
+    audio_background.pause();
+    audio_background.currentTime = 0;
+
+    // Jouer la musique de game over
+    document.getElementById('audio_YouDied').play();
+
+    // Reset les paramètres du jeu
     reset();
 
     ui.style.display                = "block";
@@ -221,6 +226,8 @@ function updateAndDraw()
                                 {
                                     // FIN DE JEU - GAME OVER
                                     console.log('Game Over!');    
+                                    document.getElementById('audio_Manger').play();
+                                    
                                     cancelAnimationFrame(animationFrame); // Arrête l'animation                            
                                     gameOver(); // On affiche l'écran de fin de jeu
                                 }
@@ -236,11 +243,13 @@ function updateAndDraw()
                                     // COLLISION !
                                     if(dist - enemy.radius - projectile.radius <= 0)
                                     {
+                                        playAudio_Restart(document.getElementById('audio_impacte'));
+                                        
                                         score.update();
     
                                         // create explosion particles 
                                         // On crée des particules quand on touche un ennemi
-                                        for(let i = 0; i < Math.random() * 100; i++)
+                                        for(let i = 0; i < Math.random() * 600; i++)
                                         {
                                             particles.push( new Particle( projectile.x, 
                                                                             projectile.y, 
@@ -305,12 +314,13 @@ function spawnEnemies()
                                     player.xPos - xEnemySpawn  );     // X = Player X - Enemy X
 
         // Objet Velocity pour notre projectile, permet d'avoir la vitesse & sa direction de tir
+        let vitesseFacteur = 1.5;
         const velocity = 
         {
             // Auront des valeurs de nombres de -1 à 1
             // X & Y Velocity ensemble donneront un très bon ratio pour connaitre la direction de tir
-            x: Math.cos(angle), 
-            y: Math.sin(angle)
+            x: Math.cos(angle) * vitesseFacteur, 
+            y: Math.sin(angle) * vitesseFacteur 
             
         }
         
@@ -332,6 +342,20 @@ function spawnEnemies()
         console.log(ennemiesSpawnTimeInterval);
     }, 700 ); // On veut cette methode toutes les 1[s] = 1000 [ms]
 }
+
+function playAudio_Restart(audio_tir)
+{
+    // Jouer le son du projectile
+    if(audio_tir.paused)
+    {
+        audio_tir.play();
+    }
+    else
+    {
+        audio_tir.currentTime = 0;
+    }
+}
+
 
 // G A M E  O B J E C T S  *********************************************************
 
@@ -451,8 +475,8 @@ class Enemy
     {
         this.draw();
         // Calcul de la nouvelle position = direction & vitesse du projectile
-        this.x = this.x + this.velocity.x ;
-        this.y = this.y + this.velocity.y ;
+        this.x = (this.x + this.velocity.x) ;
+        this.y = (this.y + this.velocity.y) ;
     }
 }
 
@@ -544,42 +568,57 @@ window.onload = init();
 // 10) Event Listener, quand je clique, on a 1 projectile qui part
 window.addEventListener('click',  (event) => // Event donnera les informations concernant le CLICK
 {  
-    console.log("Click");
-    /*console.log("Position du click :");
-    console.log("Click X ="+event.clientX);
-    console.log("Click Y ="+event.clientY);*/
-
-    // Calcul de l'angle de notre projectile, grâce à la distance entre notre joueur et le point ou on clique.
-    // Angle [radian] = atan2( Y, X)                                // Direction = Destination - Source
-    const angle = Math.atan2(   event.clientY - player.yPos,        // Y = click Y - player Y               // BUG possible ici, si on bouge le perso, la balle va suivre la trajectoire du perso
-                                event.clientX - player.xPos  );     // X = click X - player X
-
-    const radToDeg = angle * (180.0 / Math.PI);
-    //console.log("Angle de : \n"+angle+" [rad] \n"+radToDeg+" [deg°]");
-
-    // Objet Velocity pour notre projectile, permet d'avoir la vitesse & sa direction de tir
-    const velocity = 
+    // On ne fait le tir que quand on est en jeu, et non dans les menus
+    if(gameCanvas_Screen.style.display == 'block')
     {
-        // Auront des valeurs de nombres de -1 à 1
-        // X & Y Velocity ensemble donneront un très bon ratio pour connaitre la direction de tir
-        x: Math.cos(angle), 
-        y: Math.sin(angle)
+        console.log("Click");
+    
+        playAudio_Restart(document.getElementById('audio_tir'));
+    
+        /*console.log("Position du click :");
+        console.log("Click X ="+event.clientX);
+        console.log("Click Y ="+event.clientY);*/
+    
+        // Calcul de l'angle de notre projectile, grâce à la distance entre notre joueur et le point ou on clique.
+        // Angle [radian] = atan2( Y, X)                                // Direction = Destination - Source
+        const angle = Math.atan2(   event.clientY - player.yPos,        // Y = click Y - player Y               // BUG possible ici, si on bouge le perso, la balle va suivre la trajectoire du perso
+                                    event.clientX - player.xPos  );     // X = click X - player X
+    
+        const radToDeg = angle * (180.0 / Math.PI);
+        //console.log("Angle de : \n"+angle+" [rad] \n"+radToDeg+" [deg°]");
+    
+        // Objet Velocity pour notre projectile, permet d'avoir la vitesse & sa direction de tir
+        const velocity = 
+        {
+            // Auront des valeurs de nombres de -1 à 1
+            // X & Y Velocity ensemble donneront un très bon ratio pour connaitre la direction de tir
+            x: Math.cos(angle), 
+            y: Math.sin(angle)
+        }
+                 
+    
+        // A chaque click, on ajoute un projectile à notre liste de projectiles
+        // Crée un projectile depuis le joueur à la direction de l'emplacement de la souris
+        projectiles.push( new Projectile(  
+                                player.xPos, 
+                                player.yPos,
+                                5,
+                                'red',
+                                velocity,
+                                50
+                            )
+        );
     }
-             
 
-    // A chaque click, on ajoute un projectile à notre liste de projectiles
-    // Crée un projectile depuis le joueur à la direction de l'emplacement de la souris
-    projectiles.push( new Projectile(  
-                            player.xPos, 
-                            player.yPos,
-                            5,
-                            'red',
-                            velocity,
-                            50
-                        )
-    );
+    
     
 }
 );
+
+// On veut jouer la musique de fond en boucle
+audio_background.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
 
 console.log('Main : End');
