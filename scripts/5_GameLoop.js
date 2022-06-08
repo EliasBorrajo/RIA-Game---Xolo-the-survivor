@@ -64,7 +64,9 @@ function gameOver()
     } 
 
     scores.push(score);
-    
+    let userName =  window.localStorage.getItem("userName");
+  
+    document.getElementById("userName").innerHTML = userName.toString();
     document.getElementById("score").innerHTML = (Math.max(...scores.map(o => o.score))).toString();
     
     window.localStorage.setItem("scores", JSON.stringify(scores));
