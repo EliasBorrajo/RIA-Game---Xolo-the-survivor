@@ -13,6 +13,8 @@
         <script src="scripts/2_Welcome.js"></script>
         <script src="scripts/3_Instruction.js"></script>
         <script src="scripts/4_GameOver.js"></script>-->
+        
+        <script src="scripts/geolocalisation.js"></script>
 
         <!-- CSS -->
         <link rel="stylesheet" href="ressources/css/style_game.css">   
@@ -27,11 +29,16 @@
         </canvas>
         
         <div id="ui">
+
+            <div id="geolocation">
+                <p>Ville:</p>
+                <p id="ville">contrée lointaine</p>
+            </div>
+
             <div id="start" style="display: block;">
                 <a href="#" onclick="startGame()">Start Game</a>
                 <a href="#" onclick="controls()">Controls</a>
             </div>
-    
             <div id="gameOver">
                 <h1>Game Over</h1>
                 <h2>Best score</h2>
@@ -41,7 +48,23 @@
             </div>
         </div>
         
+
+        <div id="controlsText" style="display: none ;">
+                Move your mouse on the screen to target the ennemies.
+                Left click to shoot
+
+                S U R V I V E !
+        </div>
         
+        
+        <audio id="audio_tir"       src="/ressources/sons/Tir.mp3"></audio>
+        <audio id="audio_impacte"    src="/ressources/sons/impact.mp3"></audio>
+        <audio id="audio_Manger"    src="/ressources/sons/Manger.mp3"></audio>
+        <audio id="audio_CriMort"   src="/ressources/sons/dark-souls-3-falling-scream.mp3"></audio>
+        <audio id="audio_YouDied"   src="/ressources/sons/dark-souls-you-died.mp3"></audio>
+        <audio id="audio_BackGround"src="/ressources/sons/Ambient/06_FINAL_THEME.mp3"></audio>
+        
+
         <!-- Scripte vien ici après canvas, car il utilisera ses propriétés -->
         <!--<script src="scripts/6_Game_Xolo.js"></script>-->
         <script src="scripts/5_GameLoop.js"></script>
