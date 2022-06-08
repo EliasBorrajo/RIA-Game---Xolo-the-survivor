@@ -14,8 +14,8 @@ function showCoordinate (position) {
         if (request.readyState == 4 && request.status == 200) {
         var response = JSON.parse(request.responseText);
         var city = response.address.town;
+        window.localStorage.setItem("ville", JSON.stringify(city));
         console.log(`ville: ${city}`);
-        document.getElementById("ville").innerHTML = city;
         }
     }   
 }

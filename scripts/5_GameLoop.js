@@ -85,10 +85,13 @@ function gameOver()
 
     scores.push(score);
     let userName =  window.localStorage.getItem("userName");
-  
-    document.getElementById("userName").innerHTML = userName.toString();
+    let ville = window.localStorage.getItem("ville");
+
+    // TODO récupérer le score de la partie courante
+    document.getElementById("scorePartieEnCours").innerHTML = score;
+    document.getElementById("userName").innerHTML = userName.toString().replace(/"/g,"");
     document.getElementById("score").innerHTML = (Math.max(...scores.map(o => o.score))).toString();
-    
+    document.getElementById("ville").innerHTML = ville.toString().replace(/"/g,"");
     window.localStorage.setItem("scores", JSON.stringify(scores));
     console.log("Display : Game Over");
 
