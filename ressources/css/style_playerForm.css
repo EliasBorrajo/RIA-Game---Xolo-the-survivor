@@ -77,13 +77,11 @@ body {
 	font-family:Arial, Helvetica, sans-serif;
     position: relative;
     height:50px;
-	left: calc(50% - (213px/2));;
+	left: calc(50% - (200px/2));;
 	border: 3px solid #0000005f;
     color: #d2de20;
     background-color: #0000009d;
     text-decoration: none;
-    padding: 10px;
-    margin: 5px;
     border-radius: 15px;
     cursor: pointer;
     width: 200px;
