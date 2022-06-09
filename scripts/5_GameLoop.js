@@ -2,8 +2,8 @@
 console.log('1) Déclaration des attributs');
 
 // Canvas
-let canvas;
-let context;
+let canvas = document.querySelector('canvas');
+const context = canvas.getContext('2d');
 let animationFrame;
 
 // UI
@@ -121,7 +121,7 @@ function init()
     canvas = document.querySelector('canvas');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    context = canvas.getContext('2d');
+    //context = canvas.getContext('2d');
 
     // Créer les objets du monde 
     createWorld();
@@ -401,12 +401,33 @@ class Player
         context.fillStyle = this.color;
         context.fill(); // Permet de dessiner
                 
+        this.update();
     }
 
     // Comment la classe est utilisé pour être animé à l'écran
     update()
     {
+        let img = new Image();
+        //img.src = "../ressources/images/Game_Assets/Hero/Hero-Guy-PNG/_Mode-Gun/01-Idle/JK_P_Gun__Idle_000.png";
+        
+        img.context = context;
+        let drawImage = (e) =>
+        {
+            e.target.context.drawImage(img,100,100,canvas.width, canvas.height);
+        
+        }
+        img.onload = drawImage;
+        /*img.onload = function () {
+            
+            context.drawImage(img,100,100,canvas.width, canvas.height);
+            context.stroke();
+            
+        };*/
+        img.src = document.getElementById("Hero").src;
 
+        img.onerror=function(){alert(img.src+' failed');} 
+        
+        
     }
 
     // Getters
