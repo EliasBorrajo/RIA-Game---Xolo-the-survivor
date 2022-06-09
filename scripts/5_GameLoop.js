@@ -85,7 +85,7 @@ function gameOver()
 
     scores.push(score);
     let userName =  window.localStorage.getItem("userName");
-    let ville = window.localStorage.getItem("ville");
+    let ville    =  window.localStorage.getItem("ville");
 
     // TODO récupérer le score de la partie courante
     document.getElementById("scorePartieEnCours").innerHTML = score;
@@ -327,7 +327,7 @@ function spawnEnemies()
 
         // Calcul de l'angle de notre ennemi, grâce à la distance entre notre joueur et le point de sa position actuelle.
         // Angle [radian] = atan2( Y, X)                              // Direction = Destination - Source 
-        const angle = Math.atan2(   player.yPos - yEnemySpawn,        // Y = Player Y - Enemy Y                     // BUG POSSIBLE : un fois que le joueur a bougé, il ne sera plus dans l'axe de base du zombie               
+        const angle = Math.atan2(   player.yPos - yEnemySpawn,        // Y = Player Y - Enemy Y                             // BUG POSSIBLE : un fois que le joueur a bougé, il ne sera plus dans l'axe de base du zombie               
                                     player.xPos - xEnemySpawn  );     // X = Player X - Enemy X
 
         // Objet Velocity pour notre projectile, permet d'avoir la vitesse & sa direction de tir
@@ -602,7 +602,7 @@ window.addEventListener('click',  (event) => // Event donnera les informations c
     
         // Calcul de l'angle de notre projectile, grâce à la distance entre notre joueur et le point ou on clique.
         // Angle [radian] = atan2( Y, X)                                // Direction = Destination - Source
-        const angle = Math.atan2(   event.clientY - player.yPos,        // Y = click Y - player Y               // BUG possible ici, si on bouge le perso, la balle va suivre la trajectoire du perso
+        const angle = Math.atan2(   event.clientY - player.yPos,        // Y = click Y - player Y                   // BUG possible ici, si on bouge le perso, la balle va suivre la trajectoire du perso
                                     event.clientX - player.xPos  );     // X = click X - player X
     
         const radToDeg = angle * (180.0 / Math.PI);
