@@ -8,12 +8,7 @@
         <meta name="Group" content="Elias Borrajo, Jonathan Bourquin, Milena Lonfat">
         <meta name="keywords" content="Xolo, survivant, jeu, Zombie, HTML5, CSS3">
         
-        <!-- SCRIPTS -->
-        <!--<script src="scripts/1_Menu.js"></script>
-        <script src="scripts/2_Welcome.js"></script>
-        <script src="scripts/3_Instruction.js"></script>
-        <script src="scripts/4_GameOver.js"></script>-->
-        
+        <!-- SCRIPTS --> 
         <script src="scripts/geolocalisation.js"></script>
         
 
@@ -22,8 +17,6 @@
 
     </head>
     <body>
-        <!--<img id="myImage" src="ressources/images/Tutorial/potion_image.png">-->
-
         <canvas id="canvas">
             <p>ERREUR : Votre navigateur ne supporte pas l canvas de HTML5, essayez avec un autre navigateur.</p>
             <p>Essayez avec un moteur de recherche tel que : Google Chrome pour jouer au jeu.</p>
@@ -52,9 +45,9 @@
                 S U R V I V E !
         </div>
         
-        
+        <!-- AUDIOS -->
         <audio id="audio_tir"       src="/ressources/sons/Tir.mp3"></audio>
-        <audio id="audio_impacte"    src="/ressources/sons/impact.mp3"></audio>
+        <audio id="audio_impacte"   src="/ressources/sons/impact.mp3"></audio>
         <audio id="audio_Manger"    src="/ressources/sons/Manger.mp3"></audio>
         <audio id="audio_CriMort"   src="/ressources/sons/dark-souls-3-falling-scream.mp3"></audio>
         <audio id="audio_YouDied"   src="/ressources/sons/dark-souls-you-died.mp3"></audio>
@@ -62,7 +55,7 @@
         
 
         <!-- Scripte vien ici après canvas, car il utilisera ses propriétés -->
-        <!--<script src="scripts/6_Game_Xolo.js"></script>-->
         <script src="scripts/5_GameLoop.js"></script>
+
     </body>
 </html>
