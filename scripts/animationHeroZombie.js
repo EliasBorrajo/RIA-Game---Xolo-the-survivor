@@ -7,13 +7,13 @@ var spritesZombie = new Array();
 
 // Charger toutes les images dans le tableau
 // Pour le hero
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < totalimgNumber; i++) {
     spritesHero[i] = new Image();
     spritesHero[i].src = "ressources/images/Game_Assets/Hero/Hero-Guy-PNG/_Mode-Gun/01-Idle/JK_P_Gun__Idle_00"+i+".png";
     console.log(i +':'+spritesHero[i]);
 }
 // Pour le zombie
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < totalimgNumber; i++) {
     spritesZombie[i] = new Image();
     spritesZombie[i].src = "ressources/images/Game_Assets/Zombies/Idle/__Zombie01_Idle_00"+i+".png";
     console.log(i +':'+spritesZombie[i]);
