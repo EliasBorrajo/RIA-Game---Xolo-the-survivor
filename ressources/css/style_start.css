@@ -260,6 +260,7 @@ td {
 
 #dragNdrop {
   display: flex;
+  flex-wrap: wrap;
 }
 
 /* Image */
