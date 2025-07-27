@@ -1,3 +1,123 @@
+# Xolo the Survivor – RIA Game
+
+> *A retro-inspired web game built as a Rich Internet Application (RIA), featuring Xolo navigating survival challenges.*
+
+---
+
+## 📚 Project Description
+
+"Xolo the Survivor" is a web game developed as part of the **624-2 Rich Internet Applications (RIA)** module of the Bachelor of Science in Business Information Technology at HES-SO Valais-Wallis. The game features Xolo, a survivor facing ever-increasing waves of zombies in a hostile environment.
+
+The game is deployed here: [Xolo the Survivor](https://xolo.elias-borrajo.ch/description_start.html)
+
+## 🎮 Game Description
+
+### 🎯 Game Objective
+
+Survive as long as possible by eliminating as many zombies as you can, all while enjoying a 13-minute soundtrack.
+
+### 🧟‍♂️ Characters
+
+* **Xolo**: The hero of the game.
+* **Zombies**: Enemies trying to devour Xolo.
+
+### 📖 Rules and Mechanics
+
+"Xolo the Survivor" is a top-down survival game where the main character is centered on the screen. Xolo must eliminate zombies before they reach him. Killing zombies earns points, allowing players to compete with others.
+
+### 📜 Story
+
+After the KM virus triggers a zombie apocalypse in Sion, Xolo, a skilled young hunter, finds himself facing hordes of the undead. Armed with his MOSSBERG 500 shotgun, Xolo must survive for as long as possible.
+
+## 🧪 Technologies Used
+
+| Type      | Name                            | Version |
+| --------- | ------------------------------- | ------- |
+| Languages | JavaScript (ES6+), CSS, HTML    |         |
+| APIs/Web  | LocalStorage, JSON, Geolocation |         |
+
+## 🎯 Learning Objectives
+
+* Understand the principles of Rich Internet Applications (RIA)
+* Implement interactive game mechanics in JavaScript
+* Manipulate the DOM and handle user events
+* Design responsive layouts using HTML/CSS
+* Structure a modular game
+
+## 🔧 Features
+
+* Enemy elimination and score tracking
+* Dynamic user interface (menus, transitions)
+* Collision detection and survival logic
+
+### 🔧 Bonus Features
+
+* Custom particle animations
+* In-game sounds and sound effects
+* Drag'n Drop (character appearance selection)
+* Integrated geolocation
+
+## 🏗 Project Structure
+
+### 📂 Architecture
+
+* `index.html` : Game entry point
+* `playerForm.html` : Player registration form
+* `Game_Xolo.html` : Main game interface
+* `5_GameLoop.js` : Main game logic (game loop)
+* `animationHeroZombie.js` : Character animation management
+* `geolocalisation.js` : Geolocation integration
+* `assets/` : Images, sounds, and various resources
+
+General flow:
+`index.html` → initialization via `5_GameLoop.js` → interaction management (animations, movement, collisions, score)
+
+## ✅ Testing & Validation
+
+* Manual testing on various devices
+
+## 📌 Success Criteria (per the specifications)
+
+| Criterion                                     | Status |
+| --------------------------------------------- | ------ |
+| Evaluation of integrated skills (screenshots) | ✅ Done |
+| Code quality (variables, comments, etc.)      | ✅ Done |
+| Personal involvement                          | ✅ Done |
+| Task distribution report                      | ✅ Done |
+| Functional code                               | ✅ Done |
+
+## 🚀 Results and Future Improvements
+
+### ✨ Possible Improvements:
+
+* Add multiple levels
+* Improve graphical design
+* Introduce a variety of weapons
+
+### 🎯 Conclusion:
+
+This project allowed the team to learn and master JavaScript, HTML, and CSS technologies despite initially limited experience. While satisfied with the current result, the project could be enhanced with more animations and expanded gameplay.
+
+## 👤 Authors
+
+* **Elias Borrajo**
+* **Milena Lonfat**
+* **Jonathan Bourquin**
+
+---
+
+**Project completed for the 624-2 Rich Internet Applications (RIA) course**
+**Instructors: Alexandre Cotting & Raphaël Rey, HES-SO Valais-Wallis**
+*Submitted on: June 9, 2022*
+
+---
+ 
+ <details>
+ <summary>
+  Original Readme Archive (FR)
+ </summary>
+
+
  <h2>Description de notre projet</h2>
  
 </header>
@@ -52,3 +172,8 @@ Pour voir le résultat, c'est par <a href="https://elmijo.savingberset.ch/descri
 </li>
 </ul>
 </div>
+
+  
+ </details>
+
+  
